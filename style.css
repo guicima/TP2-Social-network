@@ -1,0 +1,91 @@
+:root {
+    --primary-color: #2c3e50;
+}
+
+*,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 500;
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+/*-----header-----*/
+
+.header {
+    background-color: var(--primary-color);
+    text-align: center;
+    overflow: hidden;
+}
+
+.logo {
+    font-size: 1.7em;
+    color: #fff;
+    margin: 15px 0;
+}
+
+.main-menu {
+    margin: 15px 0;
+}
+
+.main-menu-item {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    opacity: .7;
+    font-size: 1.1em;
+    padding: 5px;
+}
+
+.main-menu-item:hover {
+    opacity: 1;
+}
+
+.main-menu-item.active {
+    opacity: 1;
+}
+
+/*----sub-menu----*/
+
+.sub-menu {
+    display: flex;
+    flex-flow: column wrap;
+    height: 100px;
+    margin: 15px 10px;
+}
+
+.sub-menu-button {
+    text-align: left;
+    opacity: .7;
+    border: none;
+    border-radius: 5px;
+    margin: 1px 5px;
+    height: 26px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.sub-menu-button:hover,
+.sub-menu-button.active {
+    background-color: white;
+    opacity: 1;
+    font-weight: 600;
+    border: 1px solid #dbdbdb;
+}
+
+.sub-menu-button:active {
+    background-color: #888;
+    border: 1px solid #555;
+}
+
+.button-icon {
+    margin-left: 7px;
+    margin-right: 15px;
+}
