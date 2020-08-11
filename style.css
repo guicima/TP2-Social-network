@@ -226,22 +226,34 @@ body {
 
 @media screen and (min-width: 1000px) {
 
+    .header {
+        position: fixed;
+        width: 100vw;
+        z-index: 2;
+    }
+
     .main {
         display: flex;
         margin: 0 4vw;
+        padding-top: 70px;
     }
 
     .sub-menu {
         height: auto;
         width: 16%;
+        position: fixed;
+        left: 4vw;
     }
 
     .main-content {
         width: 52%;
+        margin: 0 32vw 0 16vw;
     }
 
     .sidebar {
         width: 32%;
+        position: fixed;
+        right: 4vw;
     }
 
     .suggestions .post {
