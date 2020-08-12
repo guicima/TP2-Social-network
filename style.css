@@ -3,10 +3,10 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-family: Roboto, sans-serif;
     font-size: 14px;
     line-height: 21px;
-    font-weight: 500;
+    scrollbar-width: none;
 }
 
 body {
@@ -38,12 +38,10 @@ body {
     opacity: .7;
     font-size: 1.1em;
     padding: 5px;
+    transition: opacity .3s;
 }
 
-.main-menu-item:hover {
-    opacity: 1;
-}
-
+.main-menu-item:hover,
 .main-menu-item.active {
     opacity: 1;
 }
@@ -58,22 +56,23 @@ body {
 }
 
 .sub-menu-button {
+    padding-top: 2px;
     text-align: left;
     opacity: .7;
-    border: none;
     border-radius: 5px;
     margin: 1px 5px;
     height: 26px;
     color: inherit;
     text-decoration: none;
     border: 1px solid #f1f1f1;
+    transition: border, background-color, opacity .3s;
 }
 
 .sub-menu-button:hover,
 .sub-menu-button.active {
     background-color: #fff;
     opacity: 1;
-    font-weight: 600;
+    font-weight: 700;
     border: 1px solid #dbdbdb;
 }
 
@@ -82,9 +81,27 @@ body {
     border: 1px solid #999;
 }
 
-.button-icon {
+.sub-menu-button::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: center center / 12px 12px no-repeat url(assets/home.svg);
+    transform: translateY(1px);
     margin-left: 7px;
     margin-right: 15px;
+}
+
+.message-icon::before {
+    background-image: url(assets/open-msg.svg);
+}
+
+.event-icon::before {
+    background-image: url(assets/calendar.svg);
+}
+
+.group-icon::before {
+    background-image: url(assets/people.svg);
 }
 
 /*----Content----*/
@@ -112,7 +129,7 @@ body {
 
 .post-profil {
     font-size: 1.3em;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .post-date {
@@ -147,8 +164,24 @@ body {
     text-decoration: underline;
 }
 
-.post-footer-link img {
+.like::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: center center / 20px 20px no-repeat url(assets/like.svg);
     margin-right: 15px;
+    transform: translateY(3px);
+}
+
+.comment::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: center center / 20px 20px no-repeat url(assets/msg.svg);
+    margin-right: 15px;
+    transform: translateY(6px);
 }
 
 /*----side-bar----*/
@@ -164,7 +197,7 @@ body {
 .suggestion-title {
     margin-top: 15px;
     font-size: 1em;
-    font-weight: 600;
+    font-weight: 700;
     border-bottom: 2px solid black;
 }
 
@@ -183,7 +216,7 @@ body {
 }
 
 .profile-name {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.2em;
 }
 
@@ -195,12 +228,21 @@ body {
     text-decoration: none;
     color: inherit;
     position: absolute;
-    bottom: 1px;
+    bottom: 0px;
+}
+
+.add-friend::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 13px;
+    background: center center / 18px 13px no-repeat url(assets/add-friend.svg);
+    margin-right: 5px;
+    transform: translateY(1px);
 }
 
 .add-friend:hover {
-    border-bottom: 1px solid black;
-    bottom: 0;
+    color: #34aaff;
 }
 
 /*---in mobile, some posts are hidden---*/
@@ -220,6 +262,7 @@ body {
     .header {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         padding: 5px 5vw;
     }
 }
@@ -232,7 +275,7 @@ body {
         z-index: 2;
     }
 
-    .main {
+    .page {
         display: flex;
         margin: 0 4vw;
         padding-top: 70px;
